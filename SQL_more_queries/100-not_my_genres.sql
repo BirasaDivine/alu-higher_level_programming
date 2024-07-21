@@ -1,20 +1,12 @@
-#!/usr/bin/python3
-"""Defines a text file insertion function."""
-
-
-def append_after(filename="", search_string="", new_string=""):
-    """Insert text after each line containing a given string in a file.
-
-    Args:
-        filename (str): The name of the file.
-        search_string (str): The string to search for within the file.
-        new_string (str): The string to insert.
-    """
-    text = ""
-    with open(filename) as r:
-        for line in r:
-            text += line
-            if search_string in line:
-                text += new_string
-    with open(filename, "w") as w:
-        w.write(text)
+-- uses the hbtn_0d_tvshows database to list all genres not linked to the show Dexter
+-- uses a database to list all rows not linked to one row
+SELECT name
+FROM tv_genres
+WHERE name NOT IN
+(SELECT name
+FROM tv_genres
+LEFT JOIN tv_show_genres ON tv_genres.id = tv_show_genres.genre_id
+LEFT JOIN tv_shows ON tv_show_genres.show_id = tv_shows.id
+WHERE tv_shows.title = 'Dexter')
+GROUP BY name
+ORDER BY name ASC;
