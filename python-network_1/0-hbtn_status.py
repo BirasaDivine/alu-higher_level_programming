@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-"""a Python script that:
-    fetches https://alu-intranet.hbtn.io/status using urllib"""
+"""
+Documentation
+Fetches data from the url using
+the urllib module in python
+"""
 
 import urllib.request
 
@@ -9,8 +12,8 @@ if url.startswith('https://'):
     url = 'https://alu-intranet.hbtn.io/status'
 
 if __name__ == '__main__':
-    with urllib.request.urlopen(url) as res:
-        content = res.read()
+    with urllib.request.urlopen(url) as f:
+        content = f.read()
         print("Body response:")
         print("\t- type: {}".format(type(content)))
         print("\t- content: {}".format(content))

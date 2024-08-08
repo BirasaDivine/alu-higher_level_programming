@@ -1,52 +1,56 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class."""
+'''creating class Rectangle'''
 
 
 class Rectangle:
-    """Represent a rectangle."""
-
+    '''empty class'''
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle.
-
-        Args:
-            width (int): The width of the new rectangle.
-            height (int): The height of the new rectangle.
-        """
+        '''initializing the instances in class'''
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """Get/set the width of the Rectangle."""
+        '''function that gets the value'''
         return self.__width
 
     @width.setter
-    def width(self, value):
-        if not isinstance(value, int):
+    def width(self, width):
+        '''set the value props for the width'''
+        if type(width) is not int:
             raise TypeError("width must be an integer")
-        if value < 0:
+        elif width < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value
+        else:
+            self.__width = width
 
     @property
     def height(self):
-        """Get/set the height of the Rectangle."""
+        '''function that gets the value'''
         return self.__height
 
     @height.setter
-    def height(self, value):
-        if not isinstance(value, int):
+    def height(self, height):
+        '''set the value props for the width'''
+        if type(height) is not int:
             raise TypeError("height must be an integer")
-        if value < 0:
+        if height < 0:
             raise ValueError("height must be >= 0")
-        self.__height = value
+        else:
+            self.__height = height
 
     def area(self):
-        """Return the area of the Rectangle."""
-        return (self.__width * self.__height)
+        '''returns the area'''
+        w = self.__width
+        h = self.__height
+        return w * h
 
     def perimeter(self):
-        """Return the perimeter of the Rectangle."""
-        if self.__width == 0 or self.__height == 0:
-            return (0)
-        return ((self.__width * 2) + (self.__height * 2))
+        '''returns the permiter'''
+        w = self.__width
+        h = self.__height
+
+        if w == 0 or h == 0:
+            return 0
+        else:
+            return 2 * (w + h)

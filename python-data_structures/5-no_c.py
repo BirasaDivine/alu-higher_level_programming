@@ -1,4 +1,7 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    Thi_nstring = my_string.translate({ord(i): None for i in 'cC'})
-    return Thi_nstring
+    new = ""
+    for i in range(len(my_string)):
+        if my_string[i] != 'c' and my_string[i] != 'C':
+            new += my_string[i]
+    return new

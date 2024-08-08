@@ -1,2 +1,2 @@
--- Lists all tables of a database on my MySQL server.
+-- Content: List all tables in the current database
 SHOW TABLES;

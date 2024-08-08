@@ -1,2 +1,2 @@
 # alu-higher_level_programming
-ALU REPO FOR PYTHON
+ALU_HIGHER_LEVEL_PROGRAMMING

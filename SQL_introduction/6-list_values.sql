@@ -1,2 +1,2 @@
--- Lists all rows of the table first_table in my MySQL server.
-SELECT * FROM `first_table`;
+-- lists all the rows in the tables
+SELECT * FROM first_table;
