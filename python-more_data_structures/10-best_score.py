@@ -1,11 +1,14 @@
 #!/usr/bin/python3
+
+
 def best_score(a_dictionary):
-    if not a_dictionary:
-        return None
-    max = list(a_dictionary.items())[0][1]
-    for key, value in a_dictionary.items():
-        if value > max:
-            max = value
-    for key, value in a_dictionary.items():
-        if value == max:
-            return key
+
+    if a_dictionary:
+        my_list = list(a_dictionary.keys())
+        score = 0
+        leader = ""
+        for i in my_list:
+            if a_dictionary[i] > score:
+                score = a_dictionary[i]
+                leader = i
+        return leader

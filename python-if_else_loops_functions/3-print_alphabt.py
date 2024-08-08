@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-for i in range(ord('a'), ord('z') + 1):
-    if i == ord('q') or i == ord('e'):
-        i += 1
-    else:
-        print("{}".format(chr(i)), end='')
+
+for i in range(97, 123):
+    alphb = chr(i)
+    if alphb != 'q' and alphb != 'e':
+        print("{}".format(alphb), end="")

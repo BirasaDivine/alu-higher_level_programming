@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-"""Are you docuemnted ?"""
-
-
+"""Defines a JSON file-reading function."""
 import json
 
 
 def load_from_json_file(filename):
-    """How far now"""
-    with open(filename, "r") as f:
+    """Create a Python object from a JSON file."""
+    with open(filename) as f:
         return json.load(f)

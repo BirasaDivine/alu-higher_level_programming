@@ -1,1 +1,1 @@
-ead me file for my direcrory`
+#!/usr/bin/python3
