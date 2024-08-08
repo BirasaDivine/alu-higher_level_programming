@@ -1,14 +1,13 @@
 #!/usr/bin/python3
-"""Rebel int"""
+"""MyInt Module"""
 
 
 class MyInt(int):
-    """Rebel int class"""
-
+    """MyInt class"""
     def __eq__(self, other):
-        """not equal when =="""
-        return super().__ne__(other)
+        """Equal method"""
+        return int(self) != int(other)
 
     def __ne__(self, other):
-        """equal when !="""
-        return super().__eq__(other)
+        """Not equal method"""
+        return int(self) == int(other)

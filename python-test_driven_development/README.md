@@ -1,1 +1,4 @@
-#!/usr/bin/python3
+python-tests:
+=============
+
+Project to practice testings

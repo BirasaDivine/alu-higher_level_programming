@@ -1,87 +1,82 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class."""
+'''creating class Rectangle'''
 
 
 class Rectangle:
-    """Represent a rectangle.
-
-    Attributes:
-        number_of_instances (int): The number of Rectangle instances.
-        print_symbol (any): The symbol used for string representation.
-    """
+    '''empty class'''
 
     number_of_instances = 0
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle.
-
-        Args:
-            width (int): The width of the new rectangle.
-            height (int): The height of the new rectangle.
-        """
-        type(self).number_of_instances += 1
+        '''initializing the instances in class'''
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
+
+    def __del__(self):
+        '''prints string to be deleted'''
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
 
     @property
     def width(self):
-        """Get/set the width of the Rectangle."""
+        '''function that gets the value'''
         return self.__width
 
     @width.setter
-    def width(self, value):
-        if not isinstance(value, int):
+    def width(self, width):
+        '''set the value props for the width'''
+        if type(width) is not int:
             raise TypeError("width must be an integer")
-        if value < 0:
+        elif width < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value
+        else:
+            self.__width = width
 
     @property
     def height(self):
-        """Get/set the height of the Rectangle."""
+        '''function that gets the value'''
         return self.__height
 
     @height.setter
-    def height(self, value):
-        if not isinstance(value, int):
+    def height(self, height):
+        '''set the value props for the width'''
+        if type(height) is not int:
             raise TypeError("height must be an integer")
-        if value < 0:
+        if height < 0:
             raise ValueError("height must be >= 0")
-        self.__height = value
+        else:
+            self.__height = height
 
     def area(self):
-        """Return the area of the Rectangle."""
-        return (self.__width * self.__height)
+        '''returns the area'''
+        w = self.__width
+        h = self.__height
+        return w * h
 
     def perimeter(self):
-        """Return the perimeter of the Rectangle."""
-        if self.__width == 0 or self.__height == 0:
-            return (0)
-        return ((self.__width * 2) + (self.__height * 2))
+        '''returns the permiter'''
+        w = self.__width
+        h = self.__height
+
+        if w == 0 or h == 0:
+            return 0
+        else:
+            return 2 * (w + h)
 
     def __str__(self):
-        """Return the printable representation of the Rectangle.
-
-        Represents the rectangle with the # character.
-        """
-        if self.__width == 0 or self.__height == 0:
-            return ("")
-
-        rect = []
-        for i in range(self.__height):
-            [rect.append(str(self.print_symbol)) for j in range(self.__width)]
-            if i != self.__height - 1:
-                rect.append("\n")
-        return ("".join(rect))
+        '''returns printable rect'''
+        strin = ""
+        w = self.__width
+        h = self.__height
+        s = str(self.print_symbol)
+        if w != 0 and h != 0:
+            strin += "\n".join(s * w for i in range(h))
+        return strin
 
     def __repr__(self):
-        """Return the string representation of the Rectangle."""
-        rect = "Rectangle(" + str(self.__width)
-        rect += ", " + str(self.__height) + ")"
-        return (rect)
-
-    def __del__(self):
-        """Print a message for every deletion of a Rectangle."""
-        type(self).number_of_instances -= 1
-        print("Bye rectangle...")
+        '''returns string'''
+        w = self.__width
+        h = self.__height
+        return ("Rectangle({:d}, {:d})".format(w, h))

@@ -1,53 +1,76 @@
-=============================
-The ``1-my_list`` module
-=============================
+Step1
+=======
 
-Using ``MyList``
----------------------
+Importing
 
-Import the class:
+       >>> MyList = __import__('1-my_list').MyList
 
-    >>> MyList = __import__('1-my_list').MyList
+Create an object
 
-Now test it:
+       >>> my_list = MyList()
 
-    >>> my_list = MyList()
+List functions
+==============
 
-    >>> my_list
-    []
+Type
 
-    >>> my_list.append(1)
+	>>> type(my_list)
+	<class '1-my_list.MyList'>
 
-    >>> my_list.append(4)
+	>>> type(my_list) == MyList
+    	True
 
-    >>> my_list.append(2)
+Print
 
-    >>> my_list
-    [1, 4, 2]
+	>>> print(my_list)
+	[]
 
-    >>> my_list.print_sorted()
-    [1, 2, 4]
+is Instance
 
-    >>> my_list
-    [1, 4, 2]
+	>>> isinstance(my_list, MyList)
+	True
 
-    >>> my_list = MyList([3, 6, 2])
+	>>> isinstance(my_list, list)
+	True
 
-    >>> my_list
-    [3, 6, 2]
+Subclass
 
-    >>> my_list.print_sorted()
-    [2, 3, 6]
+	>>> issubclass(MyList, list)
+    	True
 
-    >>> my_list = MyList("hello")
-    
-    >>> my_list
-    ['h', 'e', 'l', 'l', 'o']
+Step2
+=====
 
-    >>> my_list.print_sorted()
-    ['e', 'h', 'l', 'l', 'o']
+	>>> l2 = MyList(my_list)
+	>>> l2 = [3, 7, 0, 1, 6]
+     	>>> l2.print_sorted()
+     	Traceback (most recent call last):
+     	AttributeError: 'list' object has no attribute 'print_sorted'
 
-    >>> new_l = MyList()
+Numbers
+=======
 
-    >>> new_l.print_sorted()
-    []
+	>>> my_list.print_sorted()
+	[]
+
+	>>> my_list.append(1)
+	>>> my_list.append(4)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+	>>> my_list.append(5)
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4, 5]
+
+	>>> my_list
+	[1, 4, 2, 3, 5]
+
+Negative Numbers
+
+     	>>> my_list.append(-1)
+     	>>> my_list.append(-4)
+     	>>> my_list += [-8]
+     	>>> my_list.append(-5)
+     	>>> my_list.print_sorted()
+     	[-8, -5, -4, -1, 1, 2, 3, 4, 5]

@@ -1,1 +1,3 @@
-#!/usr/bin/python3
+python-inheritance
+==================
+Project by ALU to practice Inheritance
