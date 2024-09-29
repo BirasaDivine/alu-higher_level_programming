@@ -1,26 +1,18 @@
 #!/usr/bin/python3
-"""Returns list of pascal triangles"""
+"""creation of function"""
 
 
 def pascal_triangle(n):
-    """Returns list of pascal triangles"""
-    list_of_lists = []
+    """function"""
+    if n <= 0:
+        return []
 
-    for i in range(n):
-        if i == 0:
-            list_of_lists.append([1])
-        elif i == 1:
-            list_of_lists.append([1, 1])
-        else:
-            last_list = list_of_lists[-1]
-            count = 0
-            new_list = [1]
-            while count < len(last_list):
-                try:
-                    new_list.append(last_list[count] + last_list[count + 1])
-                    count += 1
-                except IndexError:
-                    break
-            new_list.append(1)
-            list_of_lists.append(new_list)
-    return list_of_lists
+    tr = [[1]]
+    while len(tr) != n:
+        t = tr[-1]
+        tempo = [1]
+        for a in range(len(t) - 1):
+            tempo.append(t[a] + t[a + 1])
+        tempo.append(1)
+        tr.append(tempo)
+    return tr

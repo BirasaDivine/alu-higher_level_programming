@@ -1,11 +1,7 @@
 #!/usr/bin/python3
-"""Checks object class"""
+"""Module for is_kind_of_class"""
 
 
 def is_kind_of_class(obj, a_class):
-    """Checks object class
-    Args:
-        - obj: object to class
-        - a_class: class to check
-    """
-    return isinstance(obj, a_class)
+    """checks if an object is an instance of a class."""
+    return(isinstance(obj, a_class))

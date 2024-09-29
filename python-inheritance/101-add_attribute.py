@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""How far with comments """
+"""Module for the add_attribute method"""
 
 
 def add_attribute(obj, name, value):
-    """are you documented"""
-    if hasattr(obj, '__dict__') is False:
+    """Adds a new attribute to an object if it’s possible"""
+    if not hasattr(obj, "__dict__"):
         raise TypeError("can't add new attribute")
-
     setattr(obj, name, value)

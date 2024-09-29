@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""rread file"""
+"""create a function that reads files"""
 
 
 def read_file(filename=""):
-    """read file"""
-    with open(filename) as f:
-        line = f.read()
-        print(line, end="")
+    """function that reads files"""
+    with open(filename, encoding="utf-8") as a:
+        print("{}".format(a.read()), end="")

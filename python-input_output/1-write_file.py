@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-"""Are you docuemnted ?"""
+"""
+write function that writes string of text
+and returns numbers of characters written
+"""
 
 
 def write_file(filename="", text=""):
-    """I document you"""
-    with open(filename, 'w+') as f:
-        return f.write(text)
+    """function"""
+    with open(filename, "w", encoding="utf-8") as me:
+        num = me.write(text)
+        return num

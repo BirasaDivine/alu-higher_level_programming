@@ -1,1 +1,3 @@
-ead me file for my direcrory`
+Python - Data Structures: Lists, Tuples
+=======================================
+Data Structures in python

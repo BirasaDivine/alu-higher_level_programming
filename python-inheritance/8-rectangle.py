@@ -1,16 +1,18 @@
 #!/usr/bin/python3
-"""Inherits BaseGeometry class documented now"""
-
+"""Module for BaseGeometry class."""
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """Class Rectangle"""
-
+    """A class that inherits from BaseGeometry."""
     def __init__(self, width, height):
-        """Initialize data."""
-        self.integer_validator("width", width)
+        """Instantiation with width and height."""
+        super().integer_validator("width", width)
         self.__width = width
-        self.integer_validator("height", height)
+        super().integer_validator("height", height)
         self.__height = height
+
+    def area(self):
+        """Returns the area of the rectangle."""
+        return self.__width * self.__height

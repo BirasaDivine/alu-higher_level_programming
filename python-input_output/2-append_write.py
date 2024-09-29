@@ -1,8 +1,11 @@
 #!/usr/bin/python3
-"""Are you docuemnted ?"""
+"""
+write a function that appends string and
+returns the number of characters added
+"""
 
 
 def append_write(filename="", text=""):
-    """How far now"""
-    with open(filename, 'a+') as f:
-        return f.write(text)
+    """function that adds to file"""
+    with open(filename, "a", encoding="utf-8") as a:
+        return a.write(text)

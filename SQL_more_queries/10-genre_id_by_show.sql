@@ -1,5 +1,6 @@
--- 10-genre_id_by_show.sql
-SELECT s.title, g.genre_id
-FROM tv_shows s, tv_show_genres g
-WHERE g.show_id = s.id
-ORDER BY s.title ASC, g.genre_id ASC;
+-- RECORDS: List of all shows with their genre_id
+SELECT s.`title`, g.`genre_id`
+ FROM `tv_shows` AS s
+	INNER JOIN `tv_show_genres` AS g
+	ON s.`id` = g.`show_id`
+ORDER BY s.`title`, g.`genre_id`;

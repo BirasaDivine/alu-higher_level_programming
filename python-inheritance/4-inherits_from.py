@@ -1,11 +1,7 @@
 #!/usr/bin/python3
-"""Checks object class"""
+"""Module for inherits_from method."""
 
 
 def inherits_from(obj, a_class):
-    """Checks object class
-    Args:
-        - obj: object to class
-        - a_class: class to check
-    """
-    return isinstance(obj, a_class) and type(obj) != a_class
+    """checks if an object is an instance of a class."""
+    return(issubclass(type(obj), a_class) and type(obj) != a_class)
